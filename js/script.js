@@ -15,7 +15,6 @@ function play(){                                          //fonction qui lance l
      $("#playbutton").hide();      // Permet de cacher certains élément non nécessaire dans le code
 
      $("#coeur").hide();
-
      
      $("#bulle").hide();
 
@@ -23,7 +22,7 @@ function play(){                                          //fonction qui lance l
 
      $("#imagehtmlcssjs").hide();
        
-
+     $("#instructions").hide();
 
 };
 
@@ -42,15 +41,15 @@ maBarreDeVieCouleur.style.height = "20px";                  // Fixe la hauteur d
 maBarredeVie.appendChild(maBarreDeVieCouleur);              // Lie maBarredeVie à maBarreDeVieCouleur
 
   var ecranlargeur= document.getElementById("ecran").style.width ;      // Sélectionne la largeur de l'écran
-  ecranlargeur="3000px";                                                // Puis on lui affecte 3000px
+  ecranlargeur="1500px";                                                // Puis on lui affecte 3000px
 
   var ecranHauteur = document.getElementById("ecran").style.height;     // Sélectionne la hauteur de l'écran
-  ecranHauteur = "1500px";                                              //Puis on lui affecte 1500px
+  ecranHauteur = "750px";                                              //Puis on lui affecte 1500px
 
   var perso=document.getElementById("spritefinal");      //On sélectionne le sprite final et on affecte ces propriété à la variable Perso  
 
   perso.style.left = "0";                                       //Définit la position du personnage à 0
-  perso.style.top = parseFloat(ecranHauteur) - 230 + "px";      // Définit la position en hauteur du personnage par rapport à la hauteur de l'écran
+  // perso.style.top = parseFloat(ecranHauteur) - 230 + "px";      // Définit la position en hauteur du personnage par rapport à la hauteur de l'écran
 
 
 
@@ -297,8 +296,8 @@ animerCoin3();
   
 
 
-var mynumberHautBas="1270px";  // Définition d'une variable à 1270 px
-
+var mynumberHautBas="592px";  // Définition d'une variable à 1270 px
+var Jetpackactive=false;
 
   window.onkeydown = function (event) {  // Si une touche a été appuyé alors un évènement s'est produit
     var code = event.keyCode;             // L'évènement est stocké en mémoire sous la valeur keyCode
@@ -316,7 +315,15 @@ var mynumberHautBas="1270px";  // Définition d'une variable à 1270 px
       break;
 
       case 37: //gauche
-        animerMarche(-1);     // On anime la marche vers la gauche avec la valeur -1 qui est la direction vers la gauche en css
+      
+
+
+        if (!Jetpackactive)
+
+        {
+
+          animerMarche(-1);     // On anime la marche vers la gauche avec la valeur -1 qui est la direction vers la gauche en css
+
           function allerAGauche(){
 
 
@@ -327,17 +334,32 @@ var mynumberHautBas="1270px";  // Définition d'une variable à 1270 px
 
 
         }
-        allerAGauche();              
+
+         
+      }
+
+      
+        allerAGauche();                
         break;
 
       case 38: //haut
+
+      if( Jetpackactive == true)  {
       var imgjet=document.getElementById("spritefinal"); //On sélectionne le sprite final
       mynumberHautBas=parseFloat(mynumberHautBas)-15;   // On diminue la valeur de imgjet.style.top de -15 px
       imgjet.style.top=mynumberHautBas+"px";
+      }
         break;
 
       case 39: //droite
-        animerMarche(1);          //On anime la marche vers la droite avec la valeur 1 qui est la direction vers la droite en css
+      
+
+        if (!Jetpackactive)
+
+        {
+
+          animerMarche(1);          //On anime la marche vers la droite avec la valeur 1 qui est la direction vers la droite en css
+
          function allerADroite(){
 
 
@@ -348,24 +370,33 @@ var mynumberHautBas="1270px";  // Définition d'une variable à 1270 px
 
 
         }
+
+      }
+
+
+
         allerADroite();
+
+
         break;
         
 
       case 40: //bas
+      if( Jetpackactive == true)  {
+
       var imgjet=document.getElementById("spritefinal"); //On sélectionne le sprite final
       mynumberHautBas=parseFloat(mynumberHautBas)+15; // On augmente la valeur de imgjet.style.top de 15 px
       imgjet.style.top=mynumberHautBas+"px";
 
+    }
         break;
 
       case 32: //espace
-
-      
+      Jetpackactive = true;
 
       animerJet();  //On réalise l'animation du JetPack si l'on appuie sur la touche espace
 
-
+      
        break;
 
 
@@ -693,9 +724,6 @@ var mynumberHautBas="1270px";  // Définition d'une variable à 1270 px
 
       if (!animationSword) {
 
-        var audio = new Audio('mp3/powerup.mp3');
-          audio.play();
-
 
         $("#coeur").hide(200); //On fait disparaitre le coeur en 200ms
        
@@ -800,11 +828,12 @@ var mynumberHautBas="1270px";  // Définition d'une variable à 1270 px
       if (animationSword) {
 
 
-       var audio = new Audio('mp3/stomp.mp3');
+          
+          var audio = new Audio('mp3/stomp.mp3');
           audio.play();
 
 
-        myInterval = setInterval(function(){
+         myInterval = setInterval(function(){
  
  
          document.getElementById("imagehtmlcssjs").style.backgroundPositionX = position+"px"; //Changement de position au niveau du background
@@ -823,19 +852,22 @@ var mynumberHautBas="1270px";  // Définition d'une variable à 1270 px
  
        }, 1000);
 
-
-      } 
-      
-
-   
-
-      $("#bulle").show(); // On affiche la bulle avec du texte et le contenu du CV
+       $("#bulle").show(); // On affiche la bulle avec du texte et le contenu du CV
 
       
  
       var audio = new Audio('mp3/lvlup.mp3'); // Son pour indiquer qu'on a passé un niveau
           audio.play();
 
+
+
+
+      } 
+      
+
+   
+
+      
    
 
 

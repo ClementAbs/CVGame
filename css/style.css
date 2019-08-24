@@ -2,8 +2,8 @@
 #ecran{
 	background-image:url(../img/background.png); /*On définit le chemin de l'image avec la commande background-image */
 	position: relative; /*On définit la position de l'image en relative */
-	width: 3000px;	/*On définit la largeur de la balise ecran*/
-	height: 1500px;	/*On définit la hauteur de la balise ecran*/
+	width: 1500px;	/*On définit la largeur de la balise ecran*/
+	height: 750px;	/*On définit la hauteur de la balise ecran*/
 	margin: 0 auto; /*On définit la balise ecran en 0 auto pour centrer l'image*/
 	z-index: 1;	/*On applique l'image au premier plan*/
 }
@@ -11,8 +11,8 @@
 #instructions{
 	background-image:url(../img/Instructions/instructions.png); /*On définit le chemin de l'image avec la commande background-image */
 	position: relative; /*On définit la position de l'image en relative */
-	width: 3000px;	/*On définit la largeur de la balise ecran*/
-	height: 1500px;	/*On définit la hauteur de la balise ecran*/
+	width: 1500px;	/*On définit la largeur de la balise ecran*/
+	height: 750px;	/*On définit la hauteur de la balise ecran*/
 	margin: 0 auto; /*On définit la balise ecran en 0 auto pour centrer l'image*/
 	z-index: 3;	/*On applique l'image au premier plan*/
 }
@@ -21,6 +21,8 @@
 body{
 
 	background-image: url(../img/fond.jpg);
+	width: 1500px;	/*On définit la largeur de la balise ecran*/
+	height: 750px;	/*On définit la hauteur de la balise ecran*/
 	background-repeat: no-repeat; /* On ne répète pas le contenu de l'image de fond*/
 	background-size: cover; /* Le fond d'écran couvre tout le body*/
 	z-index: -1; 		/*On applique l'image en arrière plan*/
@@ -30,8 +32,8 @@ body{
 
 	background-image: url(../img/bulle.png);  /*De même*/
 	position: absolute;
-	width: 100%;
-	height: 100%;
+	width: 50%;
+	height: 50%;
 	top: 0%;
 	left: 0%;
 	background-repeat: no-repeat;
@@ -63,7 +65,7 @@ body{
 	position: absolute;
 	width: 75.4px;
 	height: 100px;
-	top: 85%;
+	top: 592px;
 	left: 15%;
 	background-repeat: no-repeat;
 	background-position: 0px 0px;  
@@ -79,41 +81,17 @@ body{
 
 	background-image:url(../img/play.png);  /*De même*/
 	position: absolute;
-	width: 100%;
-	height: 100%;
+	width: 180px;
+	height: 180px;
 	top: 40%;
 	left: 40%;
 	margin: 0 auto;
 	background-repeat: no-repeat;
 	background-position: 0px 0px;  
-	z-index: 2;
+	z-index: 3;
 
 
 }
-
-
-
-
-
-#coeur{
-
-	background-image:url(../img/coeur.png);  /*De même*/
-	position: absolute;
-	width: 10%;
-	height: 13%;
-	top: 1200px;
-	left: 65%;
-	margin: 0 auto;
-	background-repeat: no-repeat;
-	background-position: 0px 0px;  
-	z-index: 2;
-
-
-}
-
-
-
-
 
 
 
@@ -146,7 +124,7 @@ body{
 	position: absolute;
 	width: 86.33px;
 	height: 88px;
-	top: 1270px;
+	top: 592px;
 	left:25%;
 	background-repeat: no-repeat;
 	background-position: 0px 0px;  
@@ -160,7 +138,7 @@ body{
 	position: absolute;
 	width: 86.33px;
 	height: 88px;
-	top: 1270px;
+	top: 592px;
 	left: 80%;
 	background-repeat: no-repeat;
 	background-position: 0px 0px;  
@@ -174,13 +152,31 @@ body{
 	position: absolute;
 	width: 86.33px;
 	height: 88px;
-	top: 1270px;
+	top: 592px;
 	left:90%;
 	background-repeat: no-repeat;
 	background-position: 0px 0px;  
 	z-index: 1;
 
 }
+
+#coeur{
+
+	background-image:url(../img/coeur.png);  /*De même*/
+	position: absolute;
+	width: 20%;
+	height:30%;
+	top: 500px;
+	left: 65%;
+	margin: 0 auto;
+	background-repeat: no-repeat;
+	background-position: 0px 0px;  
+	z-index: 2;
+
+
+}
+
+
 
 
 
@@ -191,7 +187,7 @@ body{
 	position: absolute;
 	width: 300px;
 	height: 300px;	
-	top: 1070px;
+	top: 392px;
 	left: 30%;
 	background-repeat: no-repeat;
 	background-position: 0px 0px;  
@@ -207,7 +203,7 @@ body{
 	position: absolute;
 	width: 300px;
 	height: 300px;	
-	top: 1070px;
+	top: 392px;
 	left: 70%;
 	background-repeat: no-repeat;
 	background-position: 0px 0px;  
@@ -225,7 +221,7 @@ body{
 	position: absolute;
 	width: 300px;
 	height: 300px;	
-	top: 1070px;
+	top: 392px;
 	left: 40%;
 	background-repeat: no-repeat;
 	background-position: 0px 0px;  
@@ -241,7 +237,7 @@ body{
 	position: absolute;
 	width: 300px;
 	height: 300px;	
-	top: 1070px;
+	top: 392px;
 	left: 10%;
 	background-repeat: no-repeat;
 	background-position: 0px 0px;  
